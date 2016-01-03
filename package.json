@@ -1,0 +1,25 @@
+{
+  "name": "queuetry",
+  "version": "1.0.3",
+  "description": "queue with retry",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "queue",
+    "retry"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alfredwesterveld/javascript-queuetry"
+  },
+  "author": "Alfred Westerveld",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.4"
+  }
+}
