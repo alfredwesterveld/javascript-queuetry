@@ -1,6 +1,6 @@
 {
   "name": "queuetry",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "queue with retry",
   "main": "index.js",
   "directories": {
@@ -13,6 +13,7 @@
     "queue",
     "retry"
   ],
+  "tonicExampleFilename": "example.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/alfredwesterveld/javascript-queuetry"
@@ -21,5 +22,8 @@
   "license": "ISC",
   "devDependencies": {
     "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "double-ended-queue": "^0.9.7"
   }
 }

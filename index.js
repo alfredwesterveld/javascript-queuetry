@@ -1,36 +1,8 @@
-"use strict"
-
-const Deque = require("double-ended-queue")
+var Deque = require('double-ended-queue')
+var QueueTry = require('./queuetry')
 
 module.exports = function (len) {
-    let queue   = new Deque(len || 16)
-    let async   = new Deque(len || 16)
-    
-    var put = function(elm) {
-        let item = async.shift()
-        
-        while (item) {
-            if (item(elm)) {
-                return true
-            }
-            item = async.shift()
-        }
-        
-        queue.push(elm)
-    }
-    
-    var getAsync = function (f) {
-        var item = queue.peekFront()
-        if (item && f(item)) {
-            queue.shift()
-            return true
-        }
-        async.push(f)
-        return false
-    }
-     
-    return Object.freeze({
-        put: put,
-        getAsync: getAsync
-    })      
+    var queue = new Deque(len)
+    var async = new Deque(len)
+    return QueueTry(queue, async)
 }
