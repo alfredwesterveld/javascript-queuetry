@@ -1,6 +1,6 @@
 {
   "name": "queuetry",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "queue with retry",
   "main": "index.js",
   "directories": {

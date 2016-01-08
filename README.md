@@ -1,15 +1,21 @@
 #Introduction
 
-asynchronous queue with retry(only peek at first, on success take).
+asynchronous queue with retry(only peek at first, on success take) javascript implementation.
 
 #TOC
 
-- [Example][#example]
-- [API][#api]
-- [Code coverage][#code-coverage]
-- [Acknowledgement][#acknowledgement]
+- [Installation](#installation)
+- [Example](#example)
+- [API](#api)
+- [Code coverage](#code-coverage)
+- [Acknowledgement](#acknowledgement)
 
-#Example (play with it at tonic blabla)
+#Installation
+
+1. Install node.js if not allready
+2. `npm install queuetry`
+
+#Example (tryable at [tonic](https://tonicdev.com/npm/queuetry))
 
 ```javascript
 var assert = require('assert')
@@ -52,16 +58,15 @@ process.on('exit', function () {
 ```
 
 #API
-
 - [`Queuetry()`](#queutry)
 - [`Queuetry(len)`](#queuetrylen)
-- [`put(item)`](#put-item)
-- [`getAsync(f)`](#getAsync)
+- [`put(item)`](#putitem)
+- [`getAsync(f)`](#getasyncf)
 
 ####Queeutry
 Creates queue with retry with len of 16.
 
-####Quetry(len)
+####Queeutry(len)
 Creates a queue with retry with length of len.
 
 ####put(item)
@@ -87,7 +92,7 @@ Lines        : 100% ( 17/17 )
 Many thanks to in no particular order:
 
 - Node.js for server-side javascript
-- Antonov blabla for deque and for template README/LICENSE
+- Petka Antonov for deque and for template README/LICENSE
 - Browserify for making this package available on client-side
 - npm for hosting my package.
 - Mocha for testing my code.
