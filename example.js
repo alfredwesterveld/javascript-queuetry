@@ -7,21 +7,21 @@ var res = []
 // put first synchronously.
 q.put("a")
 
-// get what was allready put
+// get what was allready put("a") above.
 q.getAsync(function(item) {
-    res.push([i++, item])
+    res.push([i++, item]) // => [0, "a"]
     return true // really deleted from queue
 })
 
-// async get because no put
+// async get put("b") below.
 q.getAsync(function(item) {
-    res.push([i++, item])
+    res.push([i++, item]) // => [1, "b"]
     return false // not deleted from queue, next getAsync() will get this message
 })
 
-// async get because no put
+// async get put("b") below because previous  getAsync failed
 q.getAsync(function(item) {
-    res.push([i++, item])
+    res.push([i++, item]) // => [2, "b"]
     return true
 })
 
