@@ -17,7 +17,7 @@ asynchronous queue with retry(only peek at first, on success take) javascript im
 
 #Example
 
-playable with [tonic](https://tonicdev.com/npm/queuetry)
+playable at [tonic](https://tonicdev.com/npm/queuetry)
 
 ```javascript
 var assert = require('assert')
@@ -92,11 +92,11 @@ Lines        : 100% ( 17/17 )
 
 Many thanks to in no particular order:
 
-- Node.js[http://nodejs.org] for server-side javascript[(V8)][https://developers.google.com/v8/?hl=en]
-- Github[https://github.com] for providing my project[https://github.com/alfredwesterveld/javascript-queuetry]
-- Petka Antonov for deque[https://github.com/petkaantonov/deque] and for template README/LICENSE
-- Browserify[https://www.npmjs.com/package/browserify] for making this package available on client-side
-- npm[https://www.npmjs.com/] for hosting my package[.
-- Mocha[https://mochajs.org/] for testing my code.
-- Istanbal[https://github.com/gotwarlost/istanbul] for test coverage.
-- Tonic[https://tonicdev.com] for providing playable snippet[https://tonicdev.com/npm/queuetry].
+- [Node.js](http://nodejs.org) for server-side javascript[(V8)](https://developers.google.com/v8/?hl=en)
+- [Github](https://github.com) for providing my [project](https://github.com/alfredwesterveld/javascript-queuetry)
+- Petka Antonov for [deque](https://github.com/petkaantonov/deque) and for template README/LICENSE
+- [Browserify](https://www.npmjs.com/package/browserify) for making this package available on client-side
+- [npm](https://www.npmjs.com/) for hosting my package.
+- [Mocha](https://mochajs.org/) for testing my code.
+- [Istanbal](https://github.com/gotwarlost/istanbul) for test coverage.
+- [Tonic](https://tonicdev.com) for providing [playable snippet](https://tonicdev.com/npm/queuetry).
