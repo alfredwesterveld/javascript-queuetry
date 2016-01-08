@@ -12,7 +12,7 @@ asynchronous queue with retry(only peek at first, on success take) javascript im
 
 #Installation
 
-1. Install node.js[http://nodejs.org/](assume you have allready)
+1. Install [node.js](http://nodejs.org/)(assume you have allready)
 2. `npm install queuetry`
 
 #Example
