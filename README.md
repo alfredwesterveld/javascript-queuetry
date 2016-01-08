@@ -12,10 +12,12 @@ asynchronous queue with retry(only peek at first, on success take) javascript im
 
 #Installation
 
-1. Install node.js if not allready
+1. Install node.js[http://nodejs.org/](assume you have allready)
 2. `npm install queuetry`
 
-#Example (tryable at [tonic](https://tonicdev.com/npm/queuetry))
+#Example
+
+playable with [tonic](https://tonicdev.com/npm/queuetry)
 
 ```javascript
 var assert = require('assert')
@@ -58,15 +60,15 @@ process.on('exit', function () {
 ```
 
 #API
-- [`Queuetry()`](#queutry)
-- [`Queuetry(len)`](#queuetrylen)
+- [`Queuetry()`](#queuetry)
+- [`Queuetry(capacity)`](#queuetrycapacity)
 - [`put(item)`](#putitem)
 - [`getAsync(f)`](#getasyncf)
 
-####Queeutry
-Creates queue with retry with len of 16.
+####Queuetry
+Creates queue with retry with capacity of 16.
 
-####Queeutry(len)
+####Queuetry(int capacity)
 Creates a queue with retry with length of len.
 
 ####put(item)
@@ -78,7 +80,6 @@ take item from queue, but only if f returns true.
 #Code coverage
 
 ```
-
 ======== Coverage summary ========
 Statements   : 100% ( 17/17 )
 Branches     : 100% ( 6/6 )
@@ -91,9 +92,11 @@ Lines        : 100% ( 17/17 )
 
 Many thanks to in no particular order:
 
-- Node.js for server-side javascript
-- Petka Antonov for deque and for template README/LICENSE
-- Browserify for making this package available on client-side
-- npm for hosting my package.
-- Mocha for testing my code.
-- Istanbal for test coverage.
+- Node.js[http://nodejs.org] for server-side javascript[(V8)][https://developers.google.com/v8/?hl=en]
+- Github[https://github.com] for providing my project[https://github.com/alfredwesterveld/javascript-queuetry]
+- Petka Antonov for deque[https://github.com/petkaantonov/deque] and for template README/LICENSE
+- Browserify[https://www.npmjs.com/package/browserify] for making this package available on client-side
+- npm[https://www.npmjs.com/] for hosting my package[.
+- Mocha[https://mochajs.org/] for testing my code.
+- Istanbal[https://github.com/gotwarlost/istanbul] for test coverage.
+- Tonic[https://tonicdev.com] for providing playable snippet[https://tonicdev.com/npm/queuetry].

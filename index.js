@@ -1,8 +1,8 @@
 var Deque = require('double-ended-queue')
 var QueueTry = require('./queuetry')
 
-module.exports = function (len) {
-    var queue = new Deque(len)
-    var async = new Deque(len)
+module.exports = function (capacity) {
+    var queue = new Deque(capacity)
+    var async = new Deque(capacity)
     return QueueTry(queue, async)
 }
