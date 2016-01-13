@@ -20,43 +20,44 @@ asynchronous queue with retry(only peek at first, on success take) javascript im
 playable at [tonic](https://tonicdev.com/npm/queuetry)
 
 ```javascript
-var assert = require('assert')
 var Q = require('queuetry')
 var q = Q()
 var i = 0
 var res = []
 
-// put first synchronously.
+// put first synchronously (before get).
 q.put("a")
 
-// get what was allready put
+// get what was allready put (above).
 q.getAsync(function(item) {
-    res.push([i++, item])
-    return true // really deleted from queue
+    var j = [i++, item]
+    console.log(j) // [0, 'a']
+    res.push(j)
+    return true // deleted from queue.
 })
 
 // async get because no put
 q.getAsync(function(item) {
-    res.push([i++, item])
-    return false // not deleted from queue, next getAsync() will get this message
+    var j = [i++, item]
+    console.log(j) // [1, 'b']
+    res.push(j)
+    return false // peeked from queue, next successfull getAsync() will delete.
 })
 
 // async get because no put
 q.getAsync(function(item) {
-    res.push([i++, item])
+    var j = [i++, item] // [2, 'b']
+    console.log(j)
+    res.push(j)
     return true
 })
 
-q.put("b") // put after get.o
+q.put("b") // put after get.
 
-// before exit we check
-process.on('exit', function () {
-    assert.deepEqual(res, [
-        [0, "a"],
-        [1, "b"],
-        [2, "b"]
-    ])
-})
+// Expected output =>
+// [ 0, 'a' ]
+// [ 1, 'b' ]
+// [ 2, 'b' ]
 ```
 
 #API
@@ -96,7 +97,7 @@ Many thanks to in no particular order:
 - [Github](https://github.com) for providing my [project](https://github.com/alfredwesterveld/javascript-queuetry)
 - Petka Antonov for [deque](https://github.com/petkaantonov/deque) and for template README/LICENSE
 - [Browserify](https://www.npmjs.com/package/browserify) for making this package available on client-side
-- [npm](https://www.npmjs.com/) for hosting my package.
+- [npm](https://www.npmjs.com/) for hosting my [package](.
 - [Mocha](https://mochajs.org/) for testing my code.
 - [Istanbal](https://github.com/gotwarlost/istanbul) for test coverage.
 - [Tonic](https://tonicdev.com) for providing [playable snippet](https://tonicdev.com/npm/queuetry).
